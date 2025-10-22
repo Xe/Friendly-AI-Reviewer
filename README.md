@@ -1,4 +1,4 @@
-# AI Code Reviewer Setup Guide
+# Friendly AI Reviewer Setup Guide
 
 This guide explains how to set up the automated AI PR review system using OpenRouter to analyze pull requests with your choice of AI model.
 
