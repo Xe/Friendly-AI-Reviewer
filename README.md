@@ -77,7 +77,7 @@ Check [OpenRouter pricing](https://openrouter.ai/models) for specific model cost
 
 ### Changing the Review Focus
 
-Edit `github/scripts/ai-reviewer.sh` to modify the review prompt. The current focus areas are:
+Edit `ai-reviewer.sh` to modify the review prompt. The current focus areas are:
 - Security (secrets, injection attacks, authentication)
 - Performance (algorithms, queries, memory)
 - Code Quality (readability, maintainability, error handling)
