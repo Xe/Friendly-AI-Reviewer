@@ -41,7 +41,7 @@ jobs:
         run: |
           # Run the AI reviewer and post the comment directly via stdin
           # If the script fails, the error message will be posted as a comment
-          cat diff.txt | bash github/scripts/ai-reviewer.sh | gh pr comment ${{ github.event.pull_request.number }} --repo ${{ github.repository }} -F - || {
+          cat diff.txt | bash ai-reviewer.sh | gh pr comment ${{ github.event.pull_request.number }} --repo ${{ github.repository }} -F - || {
             echo "⚠️ AI Code Review failed. Check the workflow logs for details."
             exit 1
           }
