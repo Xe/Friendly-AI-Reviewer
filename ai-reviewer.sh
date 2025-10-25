@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # AI Code Reviewer Script - Simple Comment Version
-# Usage: OPENROUTER_API_KEY=xxx AI_MODEL=model AI_TEMPERATURE=0.1 AI_MAX_TOKENS=2000 echo "DIFF_CONTENT" | ./ai-reviewer.sh
+# Usage: OPENROUTER_API_KEY=xxx AI_MODEL=model AI_TEMPERATURE=0.1 AI_MAX_TOKENS=2000 OPENAI_BASE_URL=https://openrouter.ai/api/v1 echo "DIFF_CONTENT" | ./ai-reviewer.sh
 
 set -e
 
@@ -20,6 +20,7 @@ AI_MODEL="${AI_MODEL:-z-ai/glm-4.6}"
 AI_TEMPERATURE="${AI_TEMPERATURE:-0.1}"
 AI_MAX_TOKENS="${AI_MAX_TOKENS:-2000}"
 MAX_DIFF_SIZE="${MAX_DIFF_SIZE:-800000}"  # 800KB default limit (~200K tokens, matching model context size)
+OPENAI_BASE_URL="${OPENAI_BASE_URL:-https://openrouter.ai/api/v1}"
 
 # Read diff content from stdin
 DIFF_CONTENT=$(cat)
@@ -127,10 +128,10 @@ jq -n \
 # Clean up diff file
 rm -f "$DIFF_FILE"
 
-# Make API call to OpenRouter
+# Make API call to OpenAI-compatible API
 # Use generic or repo-specific referer
 REFERER_URL="https://github.com/${REPO_FULL_NAME:-unknown/repo}"
-RESPONSE=$(curl -s -X POST "https://openrouter.ai/api/v1/chat/completions" \
+RESPONSE=$(curl -s -X POST "${OPENAI_BASE_URL}/chat/completions" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $API_KEY" \
     -H "HTTP-Referer: $REFERER_URL" \
