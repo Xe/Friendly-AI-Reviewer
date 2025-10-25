@@ -1,5 +1,10 @@
 # Friendly AI Reviewer Setup Guide
 
+- Creates highly-customizable AI Reviews as PR comments similarly to commercial subscriptions.
+- Installation: Just 2 files copied to your repo and a open router API Key in your secrets.
+- Costs: $0.01 - $0.05 per review (depends highly on model)
+- ** Example output ** https://github.com/LearningCircuit/local-deep-research/pull/959#issuecomment-3445396169
+
 This guide explains how to set up the automated AI PR review system using OpenRouter to analyze pull requests with your choice of AI model.
 
 ## Overview
