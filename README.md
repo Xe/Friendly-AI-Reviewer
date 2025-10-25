@@ -1,4 +1,4 @@
-# Friendly AI Reviewer Setup Guide
+# Friendly AI Reviewer (FAIR) Setup Guide
 
 - Creates highly-customizable AI Reviews as PR comments similarly to commercial subscriptions.
 - Installation: Just 2 files copied to your repo and a open router API Key in your secrets.
