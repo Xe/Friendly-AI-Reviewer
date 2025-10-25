@@ -1,6 +1,6 @@
 # Friendly AI Reviewer (FAIR) Setup Guide
 
-- Creates highly-customizable AI Reviews as PR comments similarly to commercial subscriptions.
+- Creates highly-customizable AI Reviews as PR comments.
 - Installation: Just 2 files copied to your repo and a open router API Key in your secrets.
 - Costs: $0.01 - $0.05 per review (depends highly on model)
 - ** Example output ** https://github.com/LearningCircuit/local-deep-research/pull/959#issuecomment-3445396169
