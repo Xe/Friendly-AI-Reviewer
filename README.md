@@ -44,6 +44,18 @@ The workflow is pre-configured with sensible defaults, but you can customize it 
 - **AI_TEMPERATURE**: Adjust randomness (default: `0.1` for consistent reviews)
 - **AI_MAX_TOKENS**: Maximum response length (default: `2000`)
 - **MAX_DIFF_SIZE**: Maximum diff size in bytes (default: `800000` / 800KB)
+- **OPENAI_BASE_URL**: OpenAI-compatible API endpoint (default: `https://openrouter.ai/api/v1`)
+
+#### Using a Custom OpenAI-Compatible Endpoint
+
+To use a different OpenAI-compatible API endpoint (e.g., a self-hosted instance), change the `OPENAI_BASE_URL` in the workflow file:
+
+```yaml
+env:
+  OPENAI_BASE_URL: https://zohar.automuse.art/v1
+```
+
+The base URL should not include the `/chat/completions` path, as it will be appended automatically.
 
 ## Usage
 
